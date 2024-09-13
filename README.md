@@ -9,7 +9,7 @@ the scripts looks for "---" on either side of your topic heading to sift out top
 adding DDMMYY at the end of your entries - the current script looks for the date at the end of your journal entries and sorts them accordingly. make sure to include this format at the end of your txt files e.g. myjournalentry130924.txt. 
 the date range - before you run the script, make sure to change the start and end date so the script will only sort entries within this range.
 
-##thanks 
+## thanks 
 Big inspo for this came from Derek Sivers. Here's an article on the [Benefits of a daily diary and topic journals](https://sive.rs/dj)
 
 ## collabs
