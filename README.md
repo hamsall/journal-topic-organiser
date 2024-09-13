@@ -13,7 +13,7 @@ the date range - before you run the script, make sure to change the start and en
 Big inspo for this came from Derek Sivers. Here's an article on the [Benefits of a daily diary and topic journals](https://sive.rs/dj)
 
 ## collabs
-If anyone is keen to jam on the code have a go! I've been using this for a while and it really works for me but any ideas are always welcome. Happy Journalling :)
+If anyone is keen to jam on the code have a go! I've been using this for a while and it really works for me but any ideas are always welcome. Happy Journaling :)
 
 ## license
 
