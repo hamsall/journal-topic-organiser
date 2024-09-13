@@ -3,6 +3,21 @@ import os
 from datetime import datetime
 from tkinter import Tk, filedialog
 
+def sanitize_path(path):
+    # Normalize the path
+    path = os.path.normpath(os.path.abspath(path))
+    
+    # Ensure the path is within the allowed directory
+    if not path.startswith(os.path.abspath(input_folder_path)):
+        raise ValueError("Access denied: Path is outside the allowed directory.")
+    
+    return path
+
+def sanitize_filename(filename):
+    # Remove any path component and potentially dangerous characters
+    filename = os.path.basename(filename)
+    return re.sub(r'[^\w\-_\. ]', '_', filename)
+
 def extract_sections(input_file):
     with open(input_file, 'r') as file:
         lines = file.readlines()
@@ -12,7 +27,7 @@ def extract_sections(input_file):
     current_content = []
 
     for line in lines:
-        match_heading = re.match(r'^---\s*([A-Za-z0-9\s]+)\s*---$', line.strip())
+        match_heading = re.match(r'^---\s*([A-Za-z0-9\s\'\-&+\/\(\):.!]+)\s*---$', line.strip())
         if match_heading:
             if current_heading is not None:
                 section_dict[current_heading] = current_content.copy()
@@ -83,15 +98,19 @@ if __name__ == "__main__":
         os.makedirs(output_folder_path)
 
     # Define date range
-    end_date = datetime(2024, 9, 12)
+    end_date = datetime(2024, 9, 13)
     start_date = datetime(2024, 7, 1)
 
     # Get files within the date range
     input_file_paths = get_files_in_date_range(input_folder_path, start_date, end_date)
 
     for input_file_path in input_file_paths:
+        input_file_path = sanitize_path(input_file_path)
         sections = extract_sections(input_file_path)
         creation_date = get_file_creation_date(input_file_path)
-        write_sections(output_folder_path, sections, creation_date)
+        
+        for heading, content_lines in sections.items():
+            safe_heading = sanitize_filename(heading)
+            write_sections(output_folder_path, {safe_heading: content_lines}, creation_date)
 
     print(f"Processed {len(input_file_paths)} files.")
