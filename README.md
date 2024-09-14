@@ -3,9 +3,9 @@ A little bit of python that sorts journal entries into topics
 
 ## installation and use
 1. [Install VS Code](https://code.visualstudio.com/) - that what I use to journal on text file
-2. Open the script and choose the dates you want to sort
+2. 2. Open the script and choose the dates you want to sort
 <img src="./define-date-range.png" alt="a screenshot of defining the date range" height="100"/>
-4. Right click the script and 'Run python in terminal'
+3. Right click the script and 'Run python in terminal'
 <img src="./how-to-use.png" alt="a screenshot of how run the script in the terminal" width="400"/>
 
 ## how it works 
