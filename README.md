@@ -3,8 +3,9 @@ A little bit of python that sorts journal entries into topics
 
 ## installation and use
 1. [Install VS Code](https://code.visualstudio.com/) - that what I use to journal on text file
-2. 2. Open the script and choose the dates you want to sort<img src="./define-date-range.png" alt="a screenshot of defining the date range" height="100"/>
-3. Right click the script and 'Run python in terminal'<img src="./how-to-use.png" alt="a screenshot of how run the script in the terminal" width="400"/>
+2. Open the script and choose the dates you want to sort<img src="./define-date-range.png" alt="a screenshot of defining the date range" height="100"/>
+3. Right click the script and 'Run python in terminal'
+<img src="./how-to-use.png" alt="a screenshot of how run the script in the terminal" width="300"/>
 
 ## how it works 
 The general idea is that you write journal entries and keep them all in a folder. Inside the entries, you can have topic headings to organise your thoughts, study, make shopping lists, whatever you want really. Then, when you want to create files that sort these topics, you run the script and choose the folder where the journal entries are stored. having folders in the main folder is fine. 
