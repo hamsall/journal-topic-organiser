@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a8ecf1d0-3dbe-49c1-9a28-d0c46a9c3b5f)# journal-topic-organiser
+# journal-topic-organiser
 A little bit of python that sorts journal entries into topics
 
 ## installation and use
