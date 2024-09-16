@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from tkinter import Tk, filedialog
 
-def sanitize_path(path):
+def sanitise_path(path):
     # Normalize the path
     path = os.path.normpath(os.path.abspath(path))
     
@@ -13,7 +13,7 @@ def sanitize_path(path):
     
     return path
 
-def sanitize_filename(filename):
+def sanitise_filename(filename):
     # Remove any path component and potentially dangerous characters
     filename = os.path.basename(filename)
     return re.sub(r'[^\w\-_\. ]', '_', filename)
@@ -105,12 +105,12 @@ if __name__ == "__main__":
     input_file_paths = get_files_in_date_range(input_folder_path, start_date, end_date)
 
     for input_file_path in input_file_paths:
-        input_file_path = sanitize_path(input_file_path)
+        input_file_path = sanitise_path(input_file_path)
         sections = extract_sections(input_file_path)
         creation_date = get_file_creation_date(input_file_path)
         
         for heading, content_lines in sections.items():
-            safe_heading = sanitize_filename(heading)
+            safe_heading = sanitise_filename(heading)
             write_sections(output_folder_path, {safe_heading: content_lines}, creation_date)
 
     print(f"Processed {len(input_file_paths)} files.")
