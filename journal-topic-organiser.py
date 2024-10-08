@@ -98,8 +98,8 @@ if __name__ == "__main__":
         os.makedirs(output_folder_path)
 
     # Define date range
-    start_date = datetime(2024, 10, 4)
-    end_date = datetime(2024, 10, 7)
+    start_date = datetime(2024, 7, 2) # format is year, month, day
+    end_date = datetime(2024, 9, 13) # format is year, month, day
 
     # Get files within the date range
     input_file_paths = get_files_in_date_range(input_folder_path, start_date, end_date)
