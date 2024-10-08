@@ -19,7 +19,7 @@ def sanitize_filename(filename):
     return re.sub(r'[^\w\-_\. ]', '_', filename)
 
 def extract_sections(input_file):
-    with open(input_file, 'r') as file:
+    with open(input_file, 'r', encoding='utf-8', errors='replace') as file:
         lines = file.readlines()
 
     section_dict = {}
@@ -73,7 +73,7 @@ def write_sections(output_folder, sections, creation_date):
         unique_heading = f'---{heading}{creation_date}---'
 
         if os.path.exists(output_file_path):
-            with open(output_file_path, 'r+') as file:
+            with open(output_file_path, 'r+', encoding='utf-8') as file:
                 content = file.read()
                 if unique_heading not in content:
                     file.seek(0, 2)  # Move to the end of the file
@@ -81,7 +81,7 @@ def write_sections(output_folder, sections, creation_date):
                     file.write('\n'.join(content_lines))
         else:
             # File does not exist, create a new file with the heading
-            with open(output_file_path, 'w') as file:
+            with open(output_file_path, 'w', encoding='utf-8') as file:
                 file.write(f'{unique_heading}\n')
                 file.write('\n'.join(content_lines))
 
