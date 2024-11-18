@@ -19,10 +19,10 @@ adding DDMMYY at the end of your entries - the current script looks for the date
 ## roadmap
 This is working completely fine for me as is, but if there's interest, here are a few things I might do: 
 
-5 stars - Make script runnable as a standalone application on a new device without any prerequisites
-10 stars - Include some templates for journaling + any incoming suggestions
-50 stars - Include some templates for work routines i.e. creative writing, code copiloting with LLMs
-100 stars - Build UI components to make the process more visual. 
+Make script runnable as a standalone application on a new device without any prerequisites
+Include some templates for journaling + any incoming suggestions
+Include some templates for work routines i.e. creative writing, code copiloting with LLMs
+Build UI components to make the process more visual. 
 
 ## thanks 
 Big inspo for this came from Derek Sivers. Here's an article on the [Benefits of a daily diary and topic journals](https://sive.rs/dj)
